@@ -177,7 +177,7 @@ const App: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal>
-              <p className="max-w-xl mx-auto text-slate-400 text-sm sm:text-base md:text-lg mb-8 leading-relaxed font-light px-4 opacity-60">
+              <p className="max-w-xl mx-auto text-slate-400 text-[13px] sm:text-base md:text-lg mb-8 leading-relaxed font-light px-4 opacity-60">
                 {PERSONAL_INFO.bio}
               </p>
             </ScrollReveal>
@@ -395,10 +395,9 @@ const App: React.FC = () => {
                   <div className="glass-card p-8 sm:p-10 rounded-[2.5rem] border border-white/5 relative h-full group/card transition-all hover:border-indigo-500/20 hover:bg-white/5">
                     <div className="absolute top-8 right-10 text-6xl text-white/5 font-serif group-hover/card:text-indigo-500/10 transition-colors">"</div>
                     <div className="flex items-center gap-4 mb-8">
-                      <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-2xl object-cover grayscale opacity-80 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all border border-indigo-500/20" />
                       <div>
                         <h4 className="text-sm font-bold text-white transition-colors group-hover/card:text-indigo-300">{t.name}</h4>
-                        <p className="text-[10px] text-slate-500 font-medium uppercase tracking-widest">{t.role} @ {t.company}</p>
+                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{t.role} @ {t.company}</p>
                       </div>
                     </div>
                     <p className="text-slate-400 text-sm leading-relaxed italic font-light opacity-80 group-hover/card:opacity-100 transition-opacity">
@@ -494,10 +493,13 @@ const App: React.FC = () => {
                       <label className="text-[9px] font-bold uppercase tracking-widest text-slate-500 ml-1">Message</label>
                       <textarea rows={4} placeholder="I have a project in mind..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all placeholder:text-slate-600 resize-none"></textarea>
                     </div>
-                    <button className="w-full py-5 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-2xl shadow-xl shadow-indigo-600/20 transition-all active:scale-95 flex items-center justify-center gap-3">
+                    <a
+                      href={`mailto:${PERSONAL_INFO.email}?subject=Project Consultation&body=Hello Shabbir, I have a project in mind...`}
+                      className="w-full py-5 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-2xl shadow-xl shadow-indigo-600/20 transition-all active:scale-95 flex items-center justify-center gap-3 no-underline"
+                    >
                       Send Message
                       <i className="fa-solid fa-paper-plane text-[10px]"></i>
-                    </button>
+                    </a>
                   </form>
                 </div>
               </div>
